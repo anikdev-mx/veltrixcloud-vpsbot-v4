@@ -1,6 +1,6 @@
 """
 ╔═══════════════════════════════════════════════════════╗
-║           StoneNodes VPS Manager Bot                  ║
+║           veltrixcloud VPS Manager Bot                  ║
 ║  Server: 180GB RAM | 94 Core CPU | Docker + systemd  ║
 ║  • Docker-in-Docker VPS containers                   ║
 ║  • Full systemctl support                            ║
@@ -53,11 +53,11 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler("stonenodes.log"),
+        logging.FileHandler("veltrixcloud.log"),
         logging.StreamHandler(),
     ],
 )
-log = logging.getLogger("StoneNodes")
+log = logging.getLogger("veltrixcloud")
 
 # ─────────────────────────────────────────────────────
 # COLORS
@@ -67,7 +67,7 @@ GREEN  = 0x57F287
 RED    = 0xED4245
 YELLOW = 0xFEE75C
 DARK   = 0x2F3136
-FOOTER = "Powered by StoneNodes"
+FOOTER = "Powered by veltrixcloud"
 
 # ─────────────────────────────────────────────────────
 # OS + CPU
@@ -86,7 +86,7 @@ CPU_MAP = {
     "xeon":   "Intel(R) Xeon(R) Platinum 8480+ @ 3.80GHz",
 }
 
-DB_FILE = "stonenodes.db"
+DB_FILE = "veltrixcloud.db"
 
 # ─────────────────────────────────────────────────────
 # DATABASE
