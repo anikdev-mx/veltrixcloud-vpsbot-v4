@@ -1,4 +1,4 @@
-# StoneNodes VPS Manager Bot (v4)
+# VeltrixCloud VPS Manager Bot (v4)
 
 A Discord bot that deploys and manages Docker-based VPS containers, with full
 `systemctl` support, **direct root SSH access** (real IP, port, username, and
@@ -38,7 +38,7 @@ physical server, all from one bot.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/atifqmi-max/vpsbot-v4.git
+git clone https://github.com/anikdev-mx/veltrixcloud-vpsbot-v4
 cd vpsbot-v4
 ```
 
