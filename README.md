@@ -124,8 +124,8 @@ Requires=docker.service
 
 [Service]
 Type=simple
-WorkingDirectory=/root/vpsbot-v4
-ExecStart=/root/vpsbot-v4/venv/bin/python3 veltrixcloud_bot.py
+WorkingDirectory=/root/veltrixcloud-vpsbot-v4
+ExecStart=/root/veltrixcloud-vpsbot-v4/venv/bin/python3 veltrixcloud_bot.py
 Restart=always
 RestartSec=5
 
