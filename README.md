@@ -39,7 +39,7 @@ physical server, all from one bot.
 
 ```bash
 git clone https://github.com/anikdev-mx/veltrixcloud-vpsbot-v4
-cd vpsbot-v4
+cd veltrixcloud-vpsbot-v4
 ```
 
 ### 2. Install Docker
