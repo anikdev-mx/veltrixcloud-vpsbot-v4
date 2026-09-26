@@ -15,7 +15,7 @@ physical server, all from one bot.
 - 🔑 Direct root SSH — real IPv4 + NAT port + root password sent to the user's DM
 - 🎟️ **Redeem codes** — generate one-time codes that let members claim their own VPS
 - 📡 **Multi-node support** — connect other physical servers as "nodes" and deploy VPS on any of them
-- 📊 Live status: `StoneNodes | {n} VPS Running`
+- 📊 Live status: `veltrixcloud | {n} VPS Running`
 - 🔄 Start / stop / restart / reinstall / regen-ssh commands
 - ⏰ Optional auto-expiry / auto-suspend
 - 🛡 Admin-only management commands
@@ -101,7 +101,7 @@ if you're on AWS, GCP, Azure, Contabo, Hetzner, etc.
 ### 7. Run the bot
 
 ```bash
-python3 stonenodes_bot.py
+python3 veltrixcloud_bot.py
 ```
 
 You should see:
@@ -109,23 +109,23 @@ You should see:
 ```
 Database ready.
 Node-agent WebSocket server listening on 0.0.0.0:8788
-Starting StoneNodes VPS Manager...
+Starting veltrixcloud VPS Manager...
 ```
 
 ### 8. Keep it running 24/7
 
-Create `/etc/systemd/system/stonenodes.service`:
+Create `/etc/systemd/system/veltrixcloud.service`:
 
 ```ini
 [Unit]
-Description=StoneNodes VPS Manager Bot
+Description=veltrixcloud VPS Manager Bot
 After=docker.service network.target
 Requires=docker.service
 
 [Service]
 Type=simple
 WorkingDirectory=/root/vpsbot-v4
-ExecStart=/root/vpsbot-v4/venv/bin/python3 stonenodes_bot.py
+ExecStart=/root/vpsbot-v4/venv/bin/python3 veltrixcloud_bot.py
 Restart=always
 RestartSec=5
 
@@ -135,10 +135,10 @@ WantedBy=multi-user.target
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable stonenodes
-sudo systemctl start stonenodes
-sudo systemctl status stonenodes
-journalctl -u stonenodes -f     # live logs
+sudo systemctl enable veltrixcloud
+sudo systemctl start veltrixcloud
+sudo systemctl status veltrixcloud
+journalctl -u veltrixcloud -f     # live logs
 ```
 
 ---
@@ -249,16 +249,16 @@ stops it (and the node goes offline). Use either:
 
 **tmux (quick):**
 ```bash
-tmux new -s stonenodes-agent
+tmux new -s veltrixcloud-agent
 sudo python3 node_agent.py     # choose 3, paste connect string
-tmux attach -t stonenodes-agent # for alredy tmux
+tmux attach -t veltrixcloud-agent # for alredy tmux
 # Ctrl+B then D to detach — it keeps running
 ```
 
-**systemd (recommended for production):** create `/etc/systemd/system/stonenodes-agent.service`:
+**systemd (recommended for production):** create `/etc/systemd/system/veltrixcloud-agent.service`:
 ```ini
 [Unit]
-Description=StoneNodes Node Agent
+Description=veltrixcloud Node Agent
 After=docker.service network.target
 
 [Service]
@@ -298,7 +298,7 @@ with the regular `docker` CLI for now (`docker stop <vps_id>`, etc.).
 ⚡ Your VPS is Ready
 An admin deployed a VPS for you!
 
-Instance ID       stonenodes-vps-0001
+Instance ID       veltrixcloud-vps-0001
 OS                Ubuntu 24.04
 RAM / CPU         2g / 2 vCPU
 Shared IPv4       <SERVER_IP or the node's public IP>
